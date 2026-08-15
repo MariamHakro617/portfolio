@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard — Portfolio</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="brand-row">
+      <div class="title">Admin Panel</div>
+      <div class="sub">Content Management</div>
+    </div>
+    <nav class="admin-nav">
+      <button data-tab="profile" class="active">Profile</button>
+      <button data-tab="skills">Skills</button>
+      <button data-tab="projects">Projects</button>
+      <button data-tab="experience">Experience</button>
+      <button data-tab="education">Education</button>
+      <button data-tab="certifications">Certifications</button>
+      <button data-tab="services">Services</button>
+      <button data-tab="testimonials">Testimonials</button>
+      <button data-tab="blog">Blog Posts</button>
+      <button data-tab="messages">Messages <span class="badge" id="msg-badge" style="display:none;"></span></button>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <h1>Content Manager</h1>
+      <div class="admin-form-actions">
+        <a href="../index.html" class="btn btn-dark-outline" target="_blank">View Site ↗</a>
+        <button class="btn btn-dark-outline" id="resetBtn" type="button">Reset Demo Data</button>
+        <button class="btn btn-primary" id="logoutBtn" type="button">Log Out</button>
+      </div>
+    </div>
+
+    <div class="admin-panel-wrap" id="wrap-profile"><div class="admin-panel" id="panel-profile"></div></div>
+    <div class="admin-panel-wrap" id="wrap-skills" style="display:none;"><div class="admin-panel" id="panel-skills"></div></div>
+    <div class="admin-panel-wrap" id="wrap-projects" style="display:none;"><div class="admin-panel" id="panel-projects"></div></div>
+    <div class="admin-panel-wrap" id="wrap-experience" style="display:none;"><div class="admin-panel" id="panel-experience"></div></div>
+    <div class="admin-panel-wrap" id="wrap-education" style="display:none;"><div class="admin-panel" id="panel-education"></div></div>
+    <div class="admin-panel-wrap" id="wrap-certifications" style="display:none;"><div class="admin-panel" id="panel-certifications"></div></div>
+    <div class="admin-panel-wrap" id="wrap-services" style="display:none;"><div class="admin-panel" id="panel-services"></div></div>
+    <div class="admin-panel-wrap" id="wrap-testimonials" style="display:none;"><div class="admin-panel" id="panel-testimonials"></div></div>
+    <div class="admin-panel-wrap" id="wrap-blog" style="display:none;"><div class="admin-panel" id="panel-blog"></div></div>
+    <div class="admin-panel-wrap" id="wrap-messages" style="display:none;"><div class="admin-panel" id="panel-messages"></div></div>
+  </main>
+</div>
+
+<!-- If deploying frontend and backend separately, uncomment and set your backend URL:
+<script>window.PORTFOLIO_API_BASE = "https://your-backend.onrender.com/api";</script>
+-->
+<script src="../js/data.js"></script>
+<script src="../js/admin.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", initAdminDashboard);
+</script>
+</body>
+</html>

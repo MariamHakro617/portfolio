@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mariam Hakro — Data Analyst & Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Mariam Hakro, a Computer Science student and data analyst specializing in machine learning, data visualization, and full-stack web development." />
+<meta name="keywords" content="portfolio, data analyst, machine learning, full-stack developer, Django developer, Python developer, Mirpurkhas, Sindh, Pakistan" />
+<meta name="author" content="Mariam Hakro" />
+
+<meta property="og:title" content="Mariam Hakro — Data Analyst & Full-Stack Developer" />
+<meta property="og:description" content="Turning data into decisions and ideas into full-stack applications." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#1b3a63" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="#home" class="brand">&lt;<span id="brand-name">Dev</span>/&gt;</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-kicker">SHEET 01 / 09 — INTRODUCTION</div>
+      <h1 id="hero-name">Loading…</h1>
+      <div class="role mono" id="hero-role"></div>
+      <p class="tagline" id="hero-tagline"></p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <a href="resume/resume.pdf" class="btn btn-outline" download>Download Résumé</a>
+      </div>
+    </div>
+    <div class="title-block">
+      <div class="avatar">
+        <img id="avatar-photo" src="assets/profile.jpg" alt="Mariam Hakro" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';" />
+        <span id="avatar-fallback"><span id="avatar-initials"></span></span>
+      </div>
+      <dl>
+        <dt>Name</dt><dd id="tb-name"></dd>
+        <dt>Role</dt><dd id="tb-role"></dd>
+        <dt>Based</dt><dd id="tb-location"></dd>
+        <dt>Status</dt><dd>Open to work</dd>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 02 — About</div>
+        <h2>About Me</h2>
+      </div>
+      <div class="sheet-no">SCALE 1:1</div>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p id="about-text"></p>
+        <p id="about-goals"></p>
+        <div class="chip-row" id="spec-chips"></div>
+      </div>
+      <div class="bracket-card reveal">
+        <h4 class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--signal-deep);margin-bottom:12px;">Education Snapshot</h4>
+        <div id="edu-snapshot" class="spec-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 03 — Skills</div>
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="sheet-no">MEASURED IN PROFICIENCY</div>
+    </div>
+    <div class="skills-grid" id="skills-grid"></div>
+  </div>
+</section>
+
+<!-- TECHNOLOGIES -->
+<section id="technologies">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 04 — Toolkit</div>
+        <h2>Technologies</h2>
+      </div>
+    </div>
+    <div class="tech-grid" id="tech-grid"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 05 — Projects</div>
+        <h2>Selected Work</h2>
+      </div>
+      <div class="sheet-no">4 PROJECTS SHOWN</div>
+    </div>
+    <div class="project-grid" id="project-grid"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 06 — Experience</div>
+        <h2>Where I've Worked</h2>
+      </div>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- EDUCATION + CERTIFICATIONS -->
+<section id="education" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 07 — Education</div>
+        <h2>Academic Background</h2>
+      </div>
+    </div>
+    <div class="edu-grid" id="edu-grid"></div>
+
+    <div class="section-head" style="margin-top:60px;">
+      <div>
+        <div class="eyebrow">Certifications & Achievements</div>
+        <h2 style="font-size:26px;">Certifications & Achievements</h2>
+      </div>
+    </div>
+    <div class="cert-grid" id="cert-grid"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 08 — Services</div>
+        <h2>What I Can Help With</h2>
+      </div>
+    </div>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section class="section-alt">
+  <div class="container">
+    <div class="resume-block reveal">
+      <div class="eyebrow" style="color:var(--signal);">Résumé</div>
+      <h2>Want the full spec sheet?</h2>
+      <p>Download my latest résumé as a PDF — updated regularly with new projects, roles, and certifications.</p>
+      <a href="resume/resume.pdf" class="btn btn-primary" download>Download PDF Résumé</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Sheet 09 — Testimonials</div>
+        <h2>What People Say</h2>
+      </div>
+    </div>
+    <div class="testimonial-grid" id="testimonial-grid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Let's Build Something</h2>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <dl id="contact-dl"></dl>
+        <div class="eyebrow" style="margin-bottom:8px;">Elsewhere</div>
+        <div class="social-row" id="social-row"></div>
+      </div>
+      <div class="reveal">
+        <div class="form-success" id="formSuccess"></div>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field" data-field="name">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="fullname" required />
+              <div class="form-error">Please enter your name.</div>
+            </div>
+            <div class="form-field" data-field="email">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" required />
+              <div class="form-error">Please enter a valid email.</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field" data-field="phone">
+              <label for="f-phone">Phone <span style="opacity:.6;">(optional)</span></label>
+              <input type="tel" id="f-phone" name="phone" />
+            </div>
+            <div class="form-field" data-field="subject">
+              <label for="f-subject">Subject</label>
+              <input type="text" id="f-subject" name="subject" required />
+              <div class="form-error">Please enter a subject.</div>
+            </div>
+          </div>
+          <div class="form-field" data-field="message">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+            <div class="form-error">Message should be at least 10 characters.</div>
+          </div>
+          <button type="submit" class="btn btn-dark-outline">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="footer-year"></span> <span id="footer-name"></span>. Built with HTML, CSS & JavaScript. <a href="admin/login.html" style="opacity:.5;">Admin</a></p>
+    <div class="social-row" id="footer-social"></div>
+  </div>
+</footer>
+
+<!-- If deploying frontend and backend separately, uncomment and set your backend URL:
+<script>window.PORTFOLIO_API_BASE = "https://your-backend.onrender.com/api";</script>
+-->
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Small extra: populate the education snapshot in About section.
+  // Waits for main.js's "content:loaded" event so it doesn't race the async
+  // content fetch (getData() only has data once loadAllContent() resolves).
+  document.addEventListener("content:loaded", () => {
+    const edu = getData("education");
+    const wrap = document.getElementById("edu-snapshot");
+    wrap.innerHTML = edu
+      .map((e) => `<div><span>${e.degree}</span><span>${e.period}</span></div>`)
+      .join("");
+    // mirror social links into footer
+    const p = getData("profile");
+    const footerSocial = document.getElementById("footer-social");
+    Object.keys(p.social).forEach((key) => {
+      const a = document.createElement("a");
+      a.href = p.social[key];
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = key;
+      footerSocial.appendChild(a);
+    });
+  });
+</script>
+</body>
+</html>

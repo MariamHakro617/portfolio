@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Blog Post — Mariam Hakro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html#home" class="brand">&lt;<span id="brand-name">Dev</span>/&gt;</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="post-header">
+  <div class="container">
+    <a href="blog.html" class="back-link" style="color:var(--signal);">← Back to Blog</a>
+    <h1 id="post-title" style="margin-top:16px;"></h1>
+  </div>
+</header>
+
+<article class="post-body" id="post-body">
+  <span class="date" id="post-date"></span>
+  <p id="post-content"></p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="footer-year"></span> <span id="footer-name"></span>. Built with HTML, CSS & JavaScript.</p>
+  </div>
+</footer>
+
+<!-- If deploying frontend and backend separately, uncomment and set your backend URL:
+<script>window.PORTFOLIO_API_BASE = "https://your-backend.onrender.com/api";</script>
+-->
+<script src="js/data.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      await loadAllContent();
+    } catch (err) {
+      document.getElementById("post-title").textContent = "Couldn't load this post";
+      document.getElementById("post-content").textContent = "Make sure the backend server is running and refresh this page.";
+      return;
+    }
+
+    const p = getData("profile");
+    document.getElementById("brand-name").textContent = p.name.split(" ")[0];
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+    document.getElementById("footer-name").textContent = p.name;
+
+    const id = new URLSearchParams(window.location.search).get("id");
+    const posts = getData("blog");
+    const post = posts.find((x) => x.id === id) || posts[0];
+
+    if (!post) {
+      document.getElementById("post-title").textContent = "Post not found";
+      document.getElementById("post-content").textContent = "This article doesn't exist or was removed.";
+      return;
+    }
+
+    document.title = post.title + " — Mariam Hakro";
+    document.getElementById("post-title").textContent = post.title;
+    document.getElementById("post-date").textContent = new Date(post.date).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+    document.getElementById("post-content").textContent = post.body;
+
+    const toggle = document.getElementById("navToggle");
+    const links = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => links.classList.toggle("open"));
+  });
+</script>
+</body>
+</html>

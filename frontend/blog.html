@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — Mariam Hakro</title>
+<meta name="description" content="Technical articles and project write-ups by Mariam Hakro." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html#home" class="brand">&lt;<span id="brand-name">Dev</span>/&gt;</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="post-header">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--signal);">Blog</div>
+    <h1>Notes from the Drafting Table</h1>
+    <p style="color:var(--linework);opacity:.85;max-width:60ch;">Write-ups on projects, code, and design — the things I learn while building.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="blog-grid" id="blog-grid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="footer-year"></span> <span id="footer-name"></span>. Built with HTML, CSS & JavaScript.</p>
+  </div>
+</footer>
+
+<!-- If deploying frontend and backend separately, uncomment and set your backend URL:
+<script>window.PORTFOLIO_API_BASE = "https://your-backend.onrender.com/api";</script>
+-->
+<script src="js/data.js"></script>
+<script>
+  function initNav() {
+    const toggle = document.getElementById("navToggle");
+    const links = document.getElementById("navLinks");
+    if (!toggle || !links) return;
+    toggle.addEventListener("click", () => links.classList.toggle("open"));
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const grid = document.getElementById("blog-grid");
+    try {
+      await loadAllContent();
+    } catch (err) {
+      grid.innerHTML = `<p class="empty-state">Couldn't reach the server. Make sure the backend is running and refresh this page.</p>`;
+      initNav();
+      return;
+    }
+
+    const p = getData("profile");
+    document.getElementById("brand-name").textContent = p.name.split(" ")[0];
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+    document.getElementById("footer-name").textContent = p.name;
+
+    const posts = getData("blog").slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    if (!posts.length) {
+      grid.innerHTML = `<p class="empty-state">No posts published yet. Check back soon.</p>`;
+    } else {
+      grid.innerHTML = posts
+        .map(
+          (post) => `
+        <article class="bracket-card blog-card">
+          <div class="date">${new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</div>
+          <h3>${post.title}</h3>
+          <p>${post.excerpt}</p>
+          <a class="read-more" href="blog-post.html?id=${post.id}">Read article →</a>
+        </article>
+      `
+        )
+        .join("");
+    }
+    initNav();
+  });
+</script>
+</body>
+</html>
